@@ -16,7 +16,7 @@ app.use(express.json());
 const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
 
 // ✅ Login/Register Combined
-app.post("/auth", async (req, res) => { 
+app.post("/auth", async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password)
     return res.status(400).json({ error: "Missing fields" });
@@ -25,12 +25,10 @@ app.post("/auth", async (req, res) => {
     let user = await prisma.user.findUnique({ where: { email } });
 
     if (user) {
-      // ✅ Login Flow
       const valid = await bcrypt.compare(password, user.password);
       if (!valid)
         return res.status(401).json({ error: "Invalid credentials" });
     } else {
-      // ✅ Register Flow
       const hashed = await bcrypt.hash(password, 10);
       user = await prisma.user.create({
         data: {
@@ -45,11 +43,12 @@ app.post("/auth", async (req, res) => {
       expiresIn: "7d",
     });
     res.json({ token, name: user.name });
-  } catch (error) {
-    console.error("Auth Error:", error);
+  } catch (err) {
+    console.error("🔥 Auth Route Error:", err); // 👈 this will help debug on Vercel logs
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 // ✅ Middleware to authenticate user from token
 const authenticate = async (req, res, next) => {
