@@ -27,25 +27,25 @@ const Login = ({ setToken, setName }) => {
           <div>
             <label className="block mb-1 text-sm">📧 Email</label>
             <input
-              type="email"
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 rounded text-black"
-              required
-            />
+  type="email"
+  placeholder="you@example.com"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="w-full p-2 rounded text-black bg-gray-200 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+/>
+
           </div>
 
           <div>
             <label className="block mb-1 text-sm">🔒 Password</label>
             <input
-              type="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 rounded text-black"
-              required
-            />
+  type="password"
+  placeholder="••••••••"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  className="w-full p-2 rounded text-black bg-gray-200 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+/>
+
           </div>
 
           <button
