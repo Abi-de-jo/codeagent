@@ -12,7 +12,10 @@ const prisma = new PrismaClient();
 app.use(cors({
   origin: "https://codeagentclient.vercel.app/", // ✅ Replace with your frontend domain
   credentials: true
-}));app.use(express.json());
+}));
+
+
+app.use(express.json());
 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
 
