@@ -1,5 +1,5 @@
-import app from "../index.js";
+const app = require("../index.js");
 
-export default (req, res) => {
-  app(req, res);
+module.exports = (req, res) => {
+  return app(req, res); // simply pass to express
 };
