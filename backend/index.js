@@ -82,6 +82,6 @@ app.get("/history", authenticate, async (req, res) => {
   res.json(history);
 });
 
-// app.listen(5000, () => console.log("✅ Server on http://localhost:5000"));
+app.listen(5000, () => console.log("✅ Server on https://codeagentserver.vercel.app"));
 
-export default app;
+// export default app;
