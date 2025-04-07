@@ -12,11 +12,11 @@ global.prisma = prisma;
 
 app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
-
+ 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
 
 // ✅ Login/Register Combined
-app.post("/auth", async (req, res) => {
+app.post("/auth", async (req, res) => { 
   const { email, password } = req.body;
   if (!email || !password)
     return res.status(400).json({ error: "Missing fields" });
