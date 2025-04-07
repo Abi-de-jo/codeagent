@@ -12,7 +12,7 @@ global.prisma = prisma;
 
 app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
-
+ 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecret";
 
 // ✅ Login/Register Combined
