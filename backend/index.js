@@ -10,7 +10,7 @@ const app = express();
 const prisma = new PrismaClient();
 
 app.use(cors({
-  origin: "https://codeagentclient.vercel.app/", // ✅ Replace with your frontend domain
+  origin: "https://codeagentclient.vercel.app",  
   credentials: true
 }));
 
