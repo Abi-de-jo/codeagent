@@ -1,4 +1,4 @@
-const API = "https://codeagentserver.vercel.app/";
+const API = "https://codeagentserver.vercel.app";
 
 export const loginOrRegister = async (email, password) => {
   const res = await fetch(`${API}/auth`, {
