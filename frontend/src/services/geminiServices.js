@@ -1,26 +1,26 @@
 export const getAIResponse = async (userInput, language) => {
-  const prompt = `You are a fun and friendly coding tutor for 10-year-old kids. 
+  const prompt = `You're a fun and friendly coding tutor for 10-year-old kids.
 
   Explain the method "${userInput}" in ${language} using **very simple words**.
   
-  Please include these sections in markdown format:
+  Provide multiple answers for each of the following sections in markdown format:
   
-  Real Example  
-  Give one real-world example a kid can understand (like toys, games, animals, or food).
+  ### Real Example
+  Give 2-3 real-world examples a kid can understand (toys, games, animals, food).
   
-  Explanation  
-  Say what the method does in easy words. Make it sound fun like a superhero or helper!
+  ### Explanation
+  Give 1 clear and fun explanation like a superhero/helper.
   
-  Code  
-  Show a very easy code example. Use things like numbers, candies, or colors so it's fun to read.
+  ### Code
+  Give 1 beginner-friendly code example using fun concepts (candies, toys, colors).
   
-  Task  
-  Give a small and easy challenge the kid can try using the method.
+  ### Task
+  Give 2-3 different challenges a kid can try.
   
-  use  
-  List 4 or 5 simple real-life things or places where we use this method.
+  ### Use
+  Give 3-4 different real-life examples where this method is used.
   
-  Make it short, fun, and super simple. Format the answer in markdown.
+  Keep it fun, short, and kid-friendly. Format everything clearly in markdown with section headers.
   `;
   
     

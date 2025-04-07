@@ -1,0 +1,62 @@
+{
+    "JavaScript": [
+      "map", "filter", "reduce", "forEach", "includes", "find", "some", "every",
+      "slice", "splice", "push", "pop", "shift", "unshift", "concat",
+      "sort", "reverse", "indexOf", "lastIndexOf", "flat", "flatMap",
+      "charAt", "charCodeAt", "concat", "includes", "endsWith", "startsWith",
+      "match", "replace", "search", "substring", "toLowerCase", "toUpperCase",
+      "trim", "padStart", "padEnd",
+      "Object.keys", "Object.values", "Object.entries", "Object.assign", "hasOwnProperty",
+      "setTimeout", "setInterval", "clearTimeout", "clearInterval",
+      "parseInt", "parseFloat", "isNaN", "JSON.stringify", "JSON.parse"
+    ],
+    "Python": [
+      "append", "extend", "insert", "remove", "pop", "clear", "index", "count", "sort", "reverse", "copy",
+      "split", "join", "replace", "lower", "upper", "find", "index",
+      "startswith", "endswith", "strip", "rstrip", "lstrip", "format",
+      "map", "filter", "reduce", "zip", "enumerate", "range", "len", "sorted",
+      "sum", "min", "max", "any", "all", "type", "isinstance",
+      "get", "keys", "values", "items", "update", "setdefault",
+      "add", "update", "discard", "union", "intersection", "difference", "issubset", "issuperset"
+    ],
+    "C": [
+      "printf", "scanf", "gets", "puts",
+      "malloc", "calloc", "realloc", "free",
+      "strlen", "strcpy", "strncpy", "strcat", "strncat",
+      "strcmp", "strncmp", "strchr", "strstr",
+      "pow", "sqrt", "abs", "ceil", "floor", "sin", "cos", "tan", "log",
+      "fopen", "fclose", "fread", "fwrite", "fgets", "fprintf", "fscanf"
+    ],
+    "C++": [
+      "cin", "cout", "getline",
+      "push_back", "emplace_back", "insert", "erase", "clear", "resize",
+      "size", "begin", "end", "rbegin", "rend", "empty",
+      "length", "size", "substr", "find", "replace", "append", "c_str", "compare", "insert", "erase",
+      "sort", "reverse", "count", "find", "binary_search", "lower_bound", "upper_bound",
+      "map", "set", "unordered_map", "pair", "tuple", "stack", "queue"
+    ],
+    "Java": [
+      "System.out.println", "System.in.read",
+      "equals", "equalsIgnoreCase", "length", "charAt", "substring",
+      "indexOf", "lastIndexOf", "toLowerCase", "toUpperCase", "trim", "split", "replace",
+      "add", "remove", "get", "set", "size", "clear", "contains", "isEmpty",
+      "put", "containsKey", "containsValue", "keySet", "values", "entrySet",
+      "Math.pow", "Math.sqrt", "Math.abs", "Math.max", "Math.min", "Math.random", "Math.round", "Math.floor", "Math.ceil"
+    ],
+    "TypeScript": [
+      "map", "filter", "reduce", "forEach", "includes", "find",
+      ": string", ": number", ": boolean", ": any", ": unknown", ": never", ": void", ": null",
+      "type", "interface", "enum", "readonly", "Partial", "Pick", "Omit", "Record", "typeof", "keyof",
+      "as", "is", "instanceof",
+      "function identity<T>(arg: T): T { return arg; }"
+    ],
+    "Go": [
+      "fmt.Println", "fmt.Printf", "fmt.Sprintf",
+      "append", "copy", "len", "cap", "make", "delete",
+      "strings.Split", "strings.Join", "strings.ToUpper", "strings.ToLower",
+      "strings.Replace", "strings.Contains", "strings.HasPrefix", "strings.HasSuffix",
+      "make(map)", "delete(map, key)", "strconv.Itoa", "strconv.Atoi", "strconv.ParseFloat", "strconv.FormatFloat",
+      "time.Now", "time.Sleep", "time.Since", "time.Parse"
+    ]
+  }
+  

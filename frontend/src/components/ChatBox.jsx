@@ -14,7 +14,7 @@ const ChatBox = ({ messages }) => {
           {msg.role === "assistant" && typeof msg.content === "object" && (
             <>
               <TabButtons setCurrentTab={setCurrentTab} />
-              <TabDisplay content={msg.content[currentTab]} tab={currentTab} />
+              <TabDisplay content={msg.content[currentTab]}  tab={currentTab} />
               </>
           )}
         </div>
