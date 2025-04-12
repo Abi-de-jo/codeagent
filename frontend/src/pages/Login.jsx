@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from "react";
 import { loginOrRegister } from "../services/api";
 
@@ -20,42 +19,56 @@ const Login = ({ setToken, setName }) => {
   };
 
   return (
-    <div className="max-h-screen flex items-center justify-center bg-gray-900">
-      <div className="max-w-md w-full bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">👤 Login / Register</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block mb-1 text-sm">📧 Email</label>
+    <div className="min-h-[86vh] flex items-center justify-center bg-gradient-to-br p-6">
+      <div className="w-full max-w-md rounded-2xl p-8 bg-white/10 backdrop-blur-xl shadow-2xl border border-white/20 text-white space-y-8">
+        <h2 className="text-3xl font-bold text-center tracking-wide text-blue-300">Welcome Back</h2>
+        <p className="text-center text-sm text-gray-300">Enter your credentials to login or register</p>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Email */}
+          <div className="relative">
             <input
               type="email"
-              placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 rounded text-black"
               required
+              className="peer w-full px-4 pt-5 pb-2 rounded-xl bg-white/10 text-white placeholder-transparent border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              placeholder="Email address"
             />
+            <label className="absolute -z-10 left-4 top-2 text-sm text-gray-300 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-400">
+              Email address
+            </label>
           </div>
 
-          <div>
-            <label className="block mb-1 text-sm">🔒 Password</label>
+          {/* Password */}
+          <div className="relative">
             <input
               type="password"
-              placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 rounded text-black"
               required
+              className="peer w-full px-4 pt-5 pb-2 rounded-xl bg-white/10 text-white placeholder-transparent border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              placeholder="Password"
             />
+            <label className="absolute -z-10 left-4 top-2 text-sm text-gray-300 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-400">
+              Password
+            </label>
           </div>
 
+          {/* Error message */}
+          {error && (
+            <p className="text-red-300 text-center text-sm bg-red-500/10 rounded-md p-2 border border-red-300/30">
+              {error}
+            </p>
+          )}
+
+          {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white font-medium"
+            className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 py-2 rounded-xl font-semibold transition duration-300 shadow-md"
           >
-            🚀 Get Started
+            Get Started
           </button>
-
-          {error && <p className="text-red-400 text-sm mt-2">❗ {error}</p>}
         </form>
       </div>
     </div>

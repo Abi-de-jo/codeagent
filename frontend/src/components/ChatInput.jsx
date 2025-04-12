@@ -56,63 +56,71 @@ const ChatInput = ({ setMessages, messages }) => {
         method.toLowerCase().includes(input.toLowerCase())
       );
 
-  return (
-    <div className="w-full max-w-4xl mx-auto bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col sm:flex-row gap-3 mt-5">
-      <div className="flex flex-col sm:flex-row w-full gap-3">
-        <select
-          value={language}
-          onChange={(e) => setLanguage(e.target.value)}
-          className="bg-gray-700 text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          {Object.keys(languageMethods).map((lang) => (
-            <option key={lang} value={lang}>{lang}</option>
-          ))}
-        </select>
+      return (
+        <div className="w-full max-w-6xl mx-auto px-4 mt-10">
+          <div className="flex flex-col sm:flex-row items-center gap-4 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl px-5 py-4 shadow-2xl">
+      
+            {/* Language Dropdown */}
+            <select
+  value={language}
+  onChange={(e) => setLanguage(e.target.value)}
+  className="bg-gradient-to-br     text-white px-4 py-2 rounded-lg border border-white/20 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition font-semibold shadow-md"
+>
+  {Object.keys(languageMethods).map((lang) => (
+    <option key={lang} value={lang} className="text-black   backdrop-blur-lg border border-white/10  ">
+      {lang.toUpperCase()}
+    </option>
+  ))}
+</select>
 
-        <div className="relative w-full">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => {
-              setInput(e.target.value);
-              setShowSuggestions(true);
-            }}
-            onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
-            onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-            className="w-full p-2 rounded bg-gray-900 text-white scrollbar-hide placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="🔍 Type a method like map, filter, append..."
-          />
-          {showSuggestions && filteredSuggestions.length > 0 && (
-            <div className="absolute z-999 mt-1 bg-gray-700 border scrollbar-hide border-gray-600 rounded w-full max-h-40 overflow-y-auto text-sm">
-             {filteredSuggestions.map((s, index) => (
-  <div
-    key={index}
-    className="px-3 py-1 cursor-pointer hover:bg-gray-600"
-    onMouseDown={() => handleSuggestionClick(s)}
-  >
-    {s}
-  </div>
-))}
-
+      
+            {/* Input Field */}
+            <div className="relative flex-grow w-full">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  setShowSuggestions(true);
+                }}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+                onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+                className="w-full px-5 py-2.5 rounded-lg bg-black/40 text-white placeholder-gray-400 border border-white/10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                placeholder="Type a method like map, filter, append..."
+              />
+      
+              {/* Suggestions Dropdown */}
+              {showSuggestions && filteredSuggestions.length > 0 && (
+                <div className="absolute  top-full left-0 w-full mt-2 scrollbar-hide  bg-white/5 backdrop-blur-xs border border-white/10 rounded-lg shadow-lg max-h-52 overflow-y-auto ">
+                  {filteredSuggestions.map((s, index) => (
+                    <div
+                      key={index}
+                      className="px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-blue-300  cursor-pointer transition-all duration-150"
+                      onMouseDown={() => handleSuggestionClick(s)}
+                    >
+                      {s.toUpperCase()}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+      
+            {/* Send Button */}
+            <button
+              onClick={handleSubmit}
+              disabled={loading}
+              className={`whitespace-nowrap px-6 py-2 rounded-lg font-semibold text-white transition-all duration-300 ${
+                loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
+              }`}
+            >
+              {loading ? "Loading..." : "Send"}
+            </button>
+          </div>
         </div>
-      </div>
-
-      <button
-        onClick={handleSubmit}
-        disabled={loading}
-        className={`w-full sm:w-auto px-6 py-2 rounded text-white font-semibold transition-all duration-300 ${
-          loading
-            ? "bg-blue-400 cursor-not-allowed"
-            : "bg-blue-600 hover:bg-blue-700"
-        }`}
-      >
-        {loading ? "Cooking..." : "Send"}
-      </button>
-    </div>
-  );
+      );
+      
+      
 };
 
 export default ChatInput;
