@@ -26,7 +26,7 @@ const getHeadingColor = (tab) => {
 
 const TabDisplay = ({ content, tab }) => {
   return (
-    <div className="w-full whitespace-pre-wrap overflow-x-auto rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-white shadow-inner px-4 sm:px-6 py-8 transition-all duration-300">
+    <div className="w-full  whitespace-pre-wrap overflow-x-auto rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-white shadow-inner px-4 sm:px-6 py-8 transition-all duration-300">
 
       {/* Heading */}
       <h2 className={`text-2xl font-bold text-center mb-6 tracking-wide uppercase ${getHeadingColor(tab)}`}>

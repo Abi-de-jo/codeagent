@@ -10,12 +10,12 @@ const TabButtons = ({ setCurrentTab, currentTab }) => {
   ];
 
   return (
-    <div className="flex flex-wrap mt-[-10px] mb-5 justify-center gap-3 ">
+    <div className="flex   flex-wrap mt-[-10px] mb-5 justify-center gap-3 ">
       {tabs.map((tab) => (
         <button
           key={tab.value}
           onClick={() => setCurrentTab(tab.value)}
-          className={`text-sm px-4 py-1.5 rounded-xl font-semibold backdrop-blur-md border border-white/10 shadow-md transition-all duration-300
+          className={`text-sm px-4 py-1.5 rounded-xl  font-semibold backdrop-blur-md border border-white/10 shadow-md transition-all duration-300
             ${tab.color}
             ${currentTab === tab.value ? "ring-2 ring-white scale-105" : "text-white"}
           `}
